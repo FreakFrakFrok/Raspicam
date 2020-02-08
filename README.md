@@ -4,7 +4,7 @@ Raspicam code will help you if you own a Raspberry Pi with an integrated camera 
 
 If you feel you want to try it, you have two options to start using Raspicam on your Raspberry Pi
 
-Option 1
+Option 1<br/>
 What do you need:
 - 32gb micro sd
 - Raspberry with internet connection always available
@@ -21,7 +21,7 @@ http://sourceforge.net/projects/win32diskimager/files/latest/download)
 - You will be asked to insert your Raspicam Activation Key
 - You're ready to start browsing the movement detection on our website
 
-Option 2 
+Option 2<br/>
 What do you need:
   Raspberry with internet connection always available
 
