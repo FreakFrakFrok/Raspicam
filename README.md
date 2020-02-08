@@ -7,7 +7,8 @@ If you feel you want to try it, you have two options to start using Raspicam on 
 Option 1<br/>
 What do you need:
 - 32gb micro sd
-- Raspberry with internet connection always available
+- Raspberry Pi with camera
+- Internet connection always available
 
 Instructions:
 - Register your account at https://www.edatasoluciones.com/raspicam/Login
@@ -23,7 +24,8 @@ http://sourceforge.net/projects/win32diskimager/files/latest/download)
 
 Option 2<br/>
 What do you need:
-  Raspberry with internet connection always available
+- Raspberry Pi with camera
+- Internet connection always available
 
 Instructions:
 - Register your account at https://www.edatasoluciones.com/raspicam/Login
@@ -35,6 +37,6 @@ Instructions:
 - Go to interfacing options and make sure the camera option is enabled
 - From a console window install M4Box: sudo apt-get install -y gpac
 - From a console window run the following script to open a file explorer with admin privileges: sudo pcmanfm
-- Within the file explorer with copy Edatasoluciones folder from your USB stick and paste on on raspberry root folder: (/) 
+- Within the file explorer copy Edatasoluciones folder from your USB stick and paste it on Raspbian OS root folder: (/) 
 - Within the file explorer move files with .service extension from Edatasoluciones folder and paste them on the following folder: (/lib/systemd/system/)
 - From a console window run the following script: sudo python3 /Edatasoluciones/Edata_CamValidation.py
