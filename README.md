@@ -4,10 +4,10 @@ Raspicam code will help you if you own a Raspberry Pi with an integrated camera 
 
 If you feel you want to try it, you have two options to start using Raspicam on your Raspberry Pi
 
-Option 1
-What do you need:
-  32gb micro sd
-  Raspberry with internet connection always available
+Option 1:
+What do you need
+-32gb micro sd
+-Raspberry with internet connection always available
 
 Instructions:
 - Register your account at https://www.edatasoluciones.com/raspicam/Login
