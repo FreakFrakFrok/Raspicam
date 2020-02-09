@@ -1,6 +1,6 @@
 # Raspicam
 
-Raspicam code will help you if you own a Raspberry Pi with an integrated camera to record actions based on motion detection. The results of these detections will be visible through the raspicam website. The good news: it's totally free for a camera with 48 hours of historical recording.
+Raspicam code will help you if you own a Raspberry Pi with an integrated camera to record actions based on movement detection. The results of these detections will be visible through the raspicam website. The good news: it's totally free for a camera with 48 hours of historical recording.
 
 If you feel you want to try it, you have two options to start using Raspicam on your Raspberry Pi
 
