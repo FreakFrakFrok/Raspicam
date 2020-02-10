@@ -3,7 +3,7 @@
 Raspicam code will help you if you own a Raspberry Pi with an integrated camera to record actions based on movement detection. The results of these detections will be visible through the raspicam website. The good news: it's totally free for a camera with 48 hours of historical recording.
 
 If you feel you want to try it, you have two options to start using Raspicam on your Raspberry Pi
-
+<br/><br/>
 Option 1<br/>
 What do you need:
 - Raspberry Pi with camera
@@ -24,8 +24,7 @@ Instructions:
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key
 - You're ready to start browsing the movement detection on our website
-<br/>
-<br/>
+<br/><br/>
 Option 2<br/>
 What do you need:
 - 32gb micro sd
