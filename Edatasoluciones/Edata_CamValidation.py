@@ -1,5 +1,3 @@
-#import tkinter 
-#from tkinter import simpledialog,messagebox
 from time import sleep
 from pathlib import Path
 import os
@@ -35,12 +33,7 @@ else:
     os.system("sudo systemctl disable Edata_Detection.service")
     os.system("sudo systemctl disable Edata_Transform.service")
     try:
-        #root = tkinter.Tk()
-        #root.withdraw()
-
-        #data01 = simpledialog.askstring("Activation","Enter Token")
         data01 = input("Activation Token: ")
-
         if (data01 != '' and data01 is not None):
             data02= getserial()
             PARAMS = {'data01':data01,'data02':data02}
