@@ -17,7 +17,7 @@ Instructions:
 - From a console window install M4Box: "sudo apt-get install -y gpac".
 - From a console window run the following script to open a file explorer with admin privileges: "sudo pcmanfm"
 - Within the file explorer copy Edatasoluciones folder from your USB stick and paste it on root folder: "/" .
-- Within the file explorer on root right click folder "/Edatasoluciones", select properties->access controls and adjust "Access Controls" to "Everyone"
+- Within the file explorer on root right click folder "/Edatasoluciones/", select properties->access controls and adjust "Access Controls" to "Everyone"
 - Within the file explorer move files with .service extension from "/Edatasoluciones/" and paste them on the following folder: "/lib/systemd/system/"
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key.
