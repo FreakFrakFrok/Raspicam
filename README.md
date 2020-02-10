@@ -8,7 +8,7 @@ Option 1<br/>What do you need:
 - Internet connection always available
 
 Instructions:
-- Register your account at https://www.edatasoluciones.com/raspicam/Login
+- Register your account at https://www.edatasoluciones.com/raspicam/registration
 - Obtain your Raspicam Activation Key once you login for the first time.
 - Download Edatasoluciones folder from Github (https://github.com/FreakFrakFrok/Raspicam) and save it on a USB stick
 - Install Raspbian OS on your Raspberry Pi
@@ -20,7 +20,7 @@ Instructions:
 - Within the file explorer move files with .service extension from "/Edatasoluciones/" and paste them on the following folder: "/lib/systemd/system/"
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key
-- You're ready to start browsing the movement detection on our website<br/><br/>
+- You're ready to start browsing the movement detection on the website:<br/>https://www.edatasoluciones.com/raspicam/login<br/>
 
 Option 2<br/>What do you need:
 - Raspberry Pi with camera
@@ -28,7 +28,7 @@ Option 2<br/>What do you need:
 - 32GB Micro SD
 
 Instructions:
-- Register your account at https://www.edatasoluciones.com/raspicam/Login
+- Register your account at https://www.edatasoluciones.com/raspicam/registration
 - Obtain your Raspicam Activation Key once you login for the first time.
 - Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from one of the following URL:
     - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
@@ -39,4 +39,4 @@ Instructions:
 - From a console window run the following script to enable your camera: "sudo raspi-config". On your Raspberry configuration go to interfacing options and make sure camera option is enabled
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key
-- You're ready to start browsing the movement detection on our website
+- You're ready to start browsing the movement detection on the website:<br/>https://www.edatasoluciones.com/raspicam/login<br/>
