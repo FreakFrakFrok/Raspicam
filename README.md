@@ -23,6 +23,7 @@ Instructions:
 - Within the file explorer move files with .service extension from "/Edatasoluciones/" and paste them on the following folder: "/lib/systemd/system/"
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 
+
 Option 2<br/>
 What do you need:
 - 32gb micro sd
