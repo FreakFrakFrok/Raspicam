@@ -30,10 +30,10 @@ if csvfile.is_file():
     os.system("sudo systemctl start Edata_Transform.service")
     print("Servicios Activos")
 else:
-    os.system("sudo systemctl enable Edata_Detection.service")
-    os.system("sudo systemctl enable Edata_Transform.service")
-    os.system("sudo systemctl start Edata_Detection.service")
-    os.system("sudo systemctl start Edata_Transform.service")
+    os.system("sudo systemctl stop Edata_Detection.service")
+    os.system("sudo systemctl stop Edata_Transform.service")    
+    os.system("sudo systemctl disable Edata_Detection.service")
+    os.system("sudo systemctl disable Edata_Transform.service")
     try:
         #root = tkinter.Tk()
         #root.withdraw()
