@@ -14,7 +14,7 @@ Instructions:
 - Obtain your Raspicam Activation Key once you login for the first time.
 - Download Edatasoluciones folder from Github (https://github.com/FreakFrakFrok/Raspicam) and save it on a USB stick
 - Install Raspbian OS on your Raspberry Pi
-- Make sure your Raspberry Pi has an internet connection
+- After finishing the installation and turning on your raspberry, make sure you have your Internet connection already set
 - From a console window run the following script to enable your camera: "sudo raspi-config"
 - Go to interfacing options and make sure the camera option is enabled
 - From a console window install M4Box: "sudo apt-get install -y gpac"
@@ -37,10 +37,9 @@ Instructions:
 - Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from one of the following URL:
     - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
     - https://drive.google.com/drive/folders/14nZC6Qvx1dawEartg2oVAVSE1XjW3wtC?usp=sharing
-- Install Raspbicam image on your 32GB Micro SD Card. If you use Windows then you can use Win32DiskImager for this task:
+- Install Raspicam image on your 32GB Micro SD Card. If you use Windows then you can use Win32DiskImager for this task:
     - http://sourceforge.net/projects/win32diskimager/files/latest/download
-- Make sure your Raspberry Pi has an internet connection
-- Make sure you have a camera installed and enabled on your Raspberry Pi
+- After finishing the installation and turning on your raspberry, make sure you have your Internet connection already set and that you have a camera installed and enabled.
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key
 - You're ready to start browsing the movement detection on our website
