@@ -40,8 +40,6 @@ try:
             #print(time)
             print("Start Raspi Image")
             os.system("sudo raspistill -n -ex sports -t 400 -w 1366 -h 768 -q 10 -th none -o /Edatasoluciones/Detection/MDetection2.jpg")
-            #foo = Image.open("/Edatasoluciones/Detection/MDetection2.jpg")
-            #foo.save("/Edatasoluciones/Uploads/"+time+".jpg")
             print("Start Raspi Video")
             os.system("sudo raspivid -n -ex sports -w 1280 -h 720 -fps 60 --bitrate 2100000 -t 60000 -o /Edatasoluciones/Uploads/"+time+".h264")
             
@@ -68,8 +66,6 @@ except Exception as e:
     file.flush()
     #sleep(20)
 finally:
-    #Finalizar el proceso y reinciarlo a los 20 segundos al no existir el archivo de seguimiento
-    #os.system("python /Edatasoluciones/Edata_Detection.py")
     print("Reiniciando en 5 min")
     sleep(300)
     os.system("sudo reboot")
