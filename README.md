@@ -13,7 +13,8 @@ What do you need:
 Instructions:
 - Register your account at https://www.edatasoluciones.com/raspicam/Login
 - Obtain your Raspicam Activation Key once you login for the first time.
-- Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from Github.
+- Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from one of the following URL:
+    - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
 - Install Raspbian image on your 32GB Micro SD Card (You can use Win32DiskImager availabe at:
 http://sourceforge.net/projects/win32diskimager/files/latest/download)
 - Make sure your Raspberry Pi has an internet connection
