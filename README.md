@@ -20,7 +20,7 @@ Instructions:
 - Within the file explorer move files with .service extension from "/Edatasoluciones/" and paste them on the following folder: "/lib/systemd/system/"
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key.
-- You're ready to start browsing the movement detection on the website.<br/<br/>
+- You're ready to start browsing the movement detection on the website.<br/><br/>
 
 Option 2 (Pre configured Raspbian OS)<br/>What do you need:
 - Raspberry Pi with camera
@@ -40,4 +40,4 @@ Instructions:
 - From a console window run the following script to enable your camera: "sudo raspi-config". On your Raspberry configuration go to interfacing options and make sure camera option is enabled.
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key.
-- You're ready to start browsing the movement detection on the website.<br/<br/>
+- You're ready to start browsing the movement detection on the website.
