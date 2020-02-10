@@ -22,8 +22,10 @@ Instructions:
 - Within the file explorer copy Edatasoluciones folder from your USB stick and paste it on root folder: "/" 
 - Within the file explorer move files with .service extension from "/Edatasoluciones/" and paste them on the following folder: "/lib/systemd/system/"
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
-
-
+- You will be asked to insert your Raspicam Activation Key
+- You're ready to start browsing the movement detection on our website
+<br/>
+<br/>
 Option 2<br/>
 What do you need:
 - 32gb micro sd
