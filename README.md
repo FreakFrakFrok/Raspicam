@@ -15,8 +15,8 @@ Instructions:
 - Obtain your Raspicam Activation Key once you login for the first time.
 - Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from one of the following URL:
     - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
-- Install Raspbian image on your 32GB Micro SD Card (You can use Win32DiskImager availabe at:
-http://sourceforge.net/projects/win32diskimager/files/latest/download)
+- Install Raspbicam image on your 32GB Micro SD Card. If you use Windows then you can use Win32DiskImager for this task:
+    - http://sourceforge.net/projects/win32diskimager/files/latest/download
 - Make sure your Raspberry Pi has an internet connection
 - Make sure you have a camera installed and enabled on your Raspberry Pi
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
