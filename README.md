@@ -15,6 +15,7 @@ Instructions:
 - Obtain your Raspicam Activation Key once you login for the first time.
 - Download the 32GB image of Raspbian with the preconfiguration of the Raspicam python code from one of the following URL:
     - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
+    - https://drive.google.com/drive/folders/14nZC6Qvx1dawEartg2oVAVSE1XjW3wtC?usp=sharing
 - Install Raspbicam image on your 32GB Micro SD Card. If you use Windows then you can use Win32DiskImager for this task:
     - http://sourceforge.net/projects/win32diskimager/files/latest/download
 - Make sure your Raspberry Pi has an internet connection
