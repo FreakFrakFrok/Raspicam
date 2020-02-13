@@ -43,7 +43,7 @@ def checkping():
     return pingstatus
 
 URL_ValidateRequest = "https://www.edatasoluciones.com/api/ValidateRequest"
-URL_SubmitVideo = "https://www.edatasoluciones.com/api/SubmitFile.ashx"
+URL_SubmitVideo = "https://www.edatasoluciones.com/api/SubmitFile"
 
 #Verificar que exista conexion a internet y el server este activo
 status = checkping()
