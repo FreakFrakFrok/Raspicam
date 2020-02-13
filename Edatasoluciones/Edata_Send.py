@@ -5,26 +5,31 @@ import os
 import requests
 import csv
 from time import sleep
-from datetime import datetime
 import binascii
 import json
 from base64 import b64encode
 
-def Token01():           
+def Token01():
+    #Get the validation token
     with open('/Edatasoluciones/Token.csv',mode='r') as csvfile:
         csvreader = csv.reader(csvfile)
         rows = list(csvreader)
         for line in rows[0]:
             resultado = line
     return resultado       
-            
+
 def Token02():
-    with open('/Edatasoluciones/Token.csv',mode='r') as csvfile:
-        csvreader = csv.reader(csvfile)
-        rows = list(csvreader)
-        for line in rows[1]:
-            resultado = line
-    return resultado  
+    #Get the serial number
+    cpuserial = ""
+    try:
+        f = open('/proc/cpuinfo','r')
+        for line in f:
+            if line[0:6] == 'Serial':
+                cpuserial = line[10:26]
+        f.close()
+    except:
+        cpuserial = ""
+    return cpuserial
 
 def convertToBinaryData(filename):
     #Convert image to binary data
@@ -50,10 +55,10 @@ status = checkping()
 print(status)
 if status == "Network Active":
     try:
+        data01 = Token01()
+        data02 = Token02()
         for filename in os.listdir('/Edatasoluciones/Uploads/'):
             if filename.endswith("_Thumbnail.jpg"):
-                data01 = Token01()
-                data02 = Token02()
                 if (data01 != '' and data02 != ''):
                     Params_ValidateRequest = {'data01':data01,'data02':data02}
                     r = requests.get(url = URL_ValidateRequest ,params = Params_ValidateRequest )
@@ -88,8 +93,15 @@ if status == "Network Active":
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File03, files={'file':File03}) 
                                 print(r.content)
                                 print(r.text)
+                        except:
+                            #Eliminar archivo fuentes de imagen y video del sistema
+                            print("Deleting by error")
+                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
+                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
+                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
                         finally:
                             #Eliminar archivo fuentes de imagen y video del sistema
+                            print("Deleting by complete")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")

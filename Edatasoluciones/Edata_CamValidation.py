@@ -18,46 +18,40 @@ def getserial():
     except:
         cpuserial = ""
     return cpuserial
-csvfile = Path("/Edatasoluciones/Token.csv")
-if csvfile.is_file():
-    os.system("sudo systemctl enable Edata_Detection.service")
-    os.system("sudo systemctl enable Edata_Transform.service")
-    os.system("sudo systemctl start Edata_Detection.service")
-    os.system("sudo systemctl start Edata_Transform.service")
-    print("Servicios Activos")
-else:
-    os.system("sudo systemctl stop Edata_Detection.service")
-    os.system("sudo systemctl stop Edata_Transform.service")
-    os.system("sudo systemctl disable Edata_Detection.service")
-    os.system("sudo systemctl disable Edata_Transform.service")
-    try:
-        data01 = input("Activation Token: ")
 
-        if (data01 != '' and data01 is not None):
-            data02= getserial()
-            PARAMS = {'data01':data01,'data02':data02}
-
-            URL = "https://www.edatasoluciones.com/api/CameraValidation"
-            r = requests.get(url = URL ,params = PARAMS)
-            data = r.json()
-            apireturn0= data['result0']
-            apireturn1= data['result1']
-            
-            if (apireturn0 == 'Activated'):
-                
-                file = open("/Edatasoluciones/Token.csv", "a")
-                file.write(apireturn1+"\n")
-                file.write(data02+"\n")
-                file.flush()
-                os.system("sudo systemctl enable Edata_Detection.service")
-                os.system("sudo systemctl enable Edata_Transform.service")
-                os.system("sudo systemctl start Edata_Detection.service")
-                os.system("sudo systemctl start Edata_Transform.service")
-                print("Activation success")
-            else:
-                print("Activation door is closed")
-                os.system("sudo python3 /Edatasoluciones/Edata_CamValidation.py")  
-    except Exception as e:
-        print("Error encontrado" + str(e))
-    finally:
-        exit()
+os.system("sudo systemctl stop Edata_Detection.service")
+os.system("sudo systemctl stop Edata_Transform.service")
+os.system("sudo systemctl disable Edata_Detection.service")
+os.system("sudo systemctl disable Edata_Transform.service")
+os.system("sudo pkill raspivid")
+os.system("sudo pkill mmal-vchiq")
+try:
+    data01 = input("Activation Token: ")
+    data02= getserial()
+    #print('data01:'+data01+' data02:'+data02)
+    if (data02 != '' and data01 != '' and data01 is not None):
+        PARAMS = {'data01':data01,'data02':data02}
+        URL = "https://www.edatasoluciones.com/api/CameraValidation"
+        r = requests.get(url = URL ,params = PARAMS)
+        data = r.json()
+        apireturn0= data['result0']
+        apireturn1= data['result1']
+        #print('apireturn0:'+apireturn0+' apireturn1:'+apireturn1)
+        if (apireturn0 == 'Activated'):
+            #csvfile = Path("/Edatasoluciones/Token.csv")
+            os.system("sudo rm -f /Edatasoluciones/Token.csv")
+            file = open("/Edatasoluciones/Token.csv", "a")
+            file.write(apireturn1+"\n")
+            file.flush()
+            os.system("sudo systemctl enable Edata_Detection.service")
+            os.system("sudo systemctl enable Edata_Transform.service")
+            os.system("sudo systemctl start Edata_Detection.service")
+            os.system("sudo systemctl start Edata_Transform.service")
+            print("Activation success")
+        else:
+            print("Activation door is closed")
+            os.system("sudo python3 /Edatasoluciones/Edata_CamValidation.py")  
+except Exception as e:
+    print("Error encontrado" + str(e))
+finally:
+    exit()
