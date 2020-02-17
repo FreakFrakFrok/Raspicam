@@ -116,10 +116,10 @@ if status == "Network Active":
         #Finalizar el proceso y reinciarlo a los 15 segundos al finalizar
         print("Finalizar proceso: Send")
         sleep(10)
-        os.system("sudo pkill -f Edata_Transform..py")   
+        os.system("sudo pkill -f Edata_Transform.py")   
         os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")                        
 else:
     sleep(10)
-    os.system("sudo pkill -f Edata_Transform..py")   
+    os.system("sudo pkill -f Edata_Transform.py")   
     os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")                  
 
