@@ -17,7 +17,6 @@ try:
                 if csvfile.is_file():
                     os.system("sudo MP4Box -fps 60 -add /Edatasoluciones/Uploads/"+currentfilename+".h264 /Edatasoluciones/Uploads/"+currentfilename+".mp4")
                     os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
-                    
                     #Generar Thumbnail del video
                     foo = Image.open("/Edatasoluciones/Uploads/"+currentfilename+".jpg")
                     foo = foo.resize((150,150),Image.ANTIALIAS)

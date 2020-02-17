@@ -42,14 +42,11 @@ try:
             os.system("sudo raspistill -n -ex sports -t 300 -w 1366 -h 768 -q 10 -th none -o /Edatasoluciones/Detection/MDetection2.jpg")
             print("Start Raspi Video")
             os.system("sudo raspivid -n -ex sports -w 1280 -h 720 -fps 60 --bitrate 2100000 -t 60000 -o /Edatasoluciones/Uploads/"+time+".h264")
-            
             shutil.move("/Edatasoluciones/Detection/MDetection2.jpg","/Edatasoluciones/Uploads/"+time+".jpg")
             #print("Finalizado: "+ str(datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
-
             os.system("sudo raspistill -n -ex sports -t 300 -w 640 -h 480 -q 10 -th none -o /Edatasoluciones/Detection/MDetection2.jpg")
             img2 = Image.open('/Edatasoluciones/Detection/MDetection2.jpg').convert('LA')
             img1 = img2
-            
             #os.system("sudo pkill raspivid")
             #os.system("sudo pkill mmal-vchiq")
         else:
