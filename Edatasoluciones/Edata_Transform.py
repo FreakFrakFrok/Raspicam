@@ -22,6 +22,9 @@ try:
                     foo = Image.open("/Edatasoluciones/Uploads/"+currentfilename+".jpg")
                     foo = foo.resize((150,150),Image.ANTIALIAS)
                     foo.save("/Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
+                else:
+                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
+                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264"
             except:
                 os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
                 os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
