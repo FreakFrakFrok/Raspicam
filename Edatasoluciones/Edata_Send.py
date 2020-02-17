@@ -16,7 +16,7 @@ def Token01():
         rows = list(csvreader)
         for line in rows[0]:
             resultado = line
-    return resultado       
+    return resultado
 
 def Token02():
     #Get the serial number
@@ -72,21 +72,18 @@ if status == "Network Active":
                             #Quitar 10 strings al final para eliminar la palabra Thumbnail en el seguimiento del nombre
                             currentfilename = currentfilename[:-10]
                             #print(currentfilename)
-                                
                             with open("/Edatasoluciones/Uploads/"+currentfilename+".jpg",'rb') as File01:
                                 Params_File01 = {'SubmitToken':SubmitToken,'FileType':'image',
                                                     'FileSize':'1366x768','FileTime':currentfilename}
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File01, files={'file':File01})  
                                 print(r.content)
-                                print(r.text)          
-                            
+                                print(r.text)
                             with open("/Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg",'rb') as File02:
                                 Params_File02 = {'SubmitToken':SubmitToken,'FileType':'image',
                                                 'FileSize':'150x150','FileTime':currentfilename}
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File02, files={'file':File02}) 
                                 print(r.content)
                                 print(r.text)
-                                    
                             with open("/Edatasoluciones/Uploads/"+currentfilename+".mp4",'rb') as File03:
                                 Params_File03 = {'SubmitToken':SubmitToken,'FileType':'video',
                                             'FileSize':'','FileTime':currentfilename}
@@ -116,10 +113,9 @@ if status == "Network Active":
         #Finalizar el proceso y reinciarlo a los 15 segundos al finalizar
         print("Finalizar proceso: Send")
         sleep(10)
-        os.system("sudo pkill -f Edata_Transform.py")   
-        os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")                        
+        os.system("sudo pkill -f Edata_Transform.py")
+        os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")
 else:
     sleep(10)
-    os.system("sudo pkill -f Edata_Transform.py")   
-    os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")                  
-
+    os.system("sudo pkill -f Edata_Transform.py")
+    os.system("sudo python3 /Edatasoluciones/Edata_Transform.py")

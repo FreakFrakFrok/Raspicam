@@ -50,7 +50,7 @@ try:
             print("Activation success")
         else:
             print("Activation door is closed")
-            os.system("sudo python3 /Edatasoluciones/Edata_CamValidation.py")  
+            os.system("sudo python3 /Edatasoluciones/Edata_CamValidation.py")
 except Exception as e:
     print("Error encontrado" + str(e))
 finally:
