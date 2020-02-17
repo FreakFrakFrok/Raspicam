@@ -97,12 +97,14 @@ if status == "Network Active":
                             #Eliminar archivo fuentes de imagen y video del sistema
                             print("Deleting by error")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
+                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
                         finally:
                             #Eliminar archivo fuentes de imagen y video del sistema
                             print("Deleting by complete")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
+                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
                             os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
     except Exception as e:
