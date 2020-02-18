@@ -5,7 +5,7 @@ from time import sleep
 from PIL import Image
 
 try:
-    for filename in os.listdir('/Edatasoluciones/Uploads/'):
+    for filename in os.listdir('/dev/tmp/Uploads/'):
         if filename.endswith("_Thumbnail.jpg"):
             print(currentfilename)
         elif filename.endswith(".jpg"):
@@ -13,19 +13,19 @@ try:
             try:
                 currentfilename = os.path.splitext(filename)[0]
                 #Verificar existencia de la imagen
-                csvfile = Path("/Edatasoluciones/Uploads/"+currentfilename+".jpg")
+                csvfile = Path("/dev/tmp/Uploads/"+currentfilename+".jpg")
                 if csvfile.is_file():
-                    os.system("sudo MP4Box -fps 60 -add /Edatasoluciones/Uploads/"+currentfilename+".h264 /Edatasoluciones/Uploads/"+currentfilename+".mp4")
-                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
+                    os.system("sudo MP4Box -fps 60 -add /dev/tmp/Uploads/"+currentfilename+".h264 /dev/tmp/Uploads/"+currentfilename+".mp4")
+                    os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".h264")
                     #Generar Thumbnail del video
-                    foo = Image.open("/Edatasoluciones/Uploads/"+currentfilename+".jpg")
+                    foo = Image.open("/dev/tmp/Uploads/"+currentfilename+".jpg")
                     foo = foo.resize((150,150),Image.ANTIALIAS)
-                    foo.save("/Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
+                    foo.save("/dev/tmp/Uploads/"+currentfilename+"_Thumbnail.jpg")
             except:
-                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
-                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
-                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
-                    os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
+                    os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".h264")
+                    os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".mp4")
+                    os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".jpg")
+                    os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+"_Thumbnail.jpg")
 except Exception as e:
     print("Error encontrado" + str(e))
     file = open("/Edatasoluciones/log_error.csv","a")

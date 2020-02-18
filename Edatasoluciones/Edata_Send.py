@@ -57,7 +57,7 @@ if status == "Network Active":
     try:
         data01 = Token01()
         data02 = Token02()
-        for filename in os.listdir('/Edatasoluciones/Uploads/'):
+        for filename in os.listdir('/dev/tmp/Uploads/'):
             if filename.endswith("_Thumbnail.jpg"):
                 if (data01 != '' and data02 != ''):
                     Params_ValidateRequest = {'data01':data01,'data02':data02}
@@ -72,19 +72,19 @@ if status == "Network Active":
                             #Quitar 10 strings al final para eliminar la palabra Thumbnail en el seguimiento del nombre
                             currentfilename = currentfilename[:-10]
                             #print(currentfilename)
-                            with open("/Edatasoluciones/Uploads/"+currentfilename+".jpg",'rb') as File01:
+                            with open("/dev/tmp/Uploads/"+currentfilename+".jpg",'rb') as File01:
                                 Params_File01 = {'SubmitToken':SubmitToken,'FileType':'image',
                                                     'FileSize':'1366x768','FileTime':currentfilename}
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File01, files={'file':File01})  
                                 print(r.content)
                                 print(r.text)
-                            with open("/Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg",'rb') as File02:
+                            with open("/dev/tmp/Uploads/"+currentfilename+"_Thumbnail.jpg",'rb') as File02:
                                 Params_File02 = {'SubmitToken':SubmitToken,'FileType':'image',
                                                 'FileSize':'150x150','FileTime':currentfilename}
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File02, files={'file':File02}) 
                                 print(r.content)
                                 print(r.text)
-                            with open("/Edatasoluciones/Uploads/"+currentfilename+".mp4",'rb') as File03:
+                            with open("/dev/tmp/Uploads/"+currentfilename+".mp4",'rb') as File03:
                                 Params_File03 = {'SubmitToken':SubmitToken,'FileType':'video',
                                             'FileSize':'','FileTime':currentfilename}
                                 r = requests.post(url = URL_SubmitVideo, params = Params_File03, files={'file':File03}) 
@@ -93,17 +93,17 @@ if status == "Network Active":
                         except:
                             #Eliminar archivo fuentes de imagen y video del sistema
                             print("Deleting by error")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".mp4")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".h264")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".jpg")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+"_Thumbnail.jpg")
                         finally:
                             #Eliminar archivo fuentes de imagen y video del sistema
                             print("Deleting by complete")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".mp4")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".h264")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+".jpg")
-                            os.system("sudo rm -f /Edatasoluciones/Uploads/"+currentfilename+"_Thumbnail.jpg")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".mp4")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".h264")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+".jpg")
+                            os.system("sudo rm -f /dev/tmp/Uploads/"+currentfilename+"_Thumbnail.jpg")
     except Exception as e:
         print("Error encontrado" + str(e))
         file = open("/Edatasoluciones/log_error.csv","a")

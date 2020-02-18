@@ -18,8 +18,10 @@ def image_entropy(img):
     return -sum([p * math.log(p, 2) for p in samples_probability if p != 0])
 
 try:
-    os.system("sudo raspistill -n -ex sports -t 500 -w 640 -h 480 -q 10 -th none -o /Edatasoluciones/Detection/MDetection1.jpg")
-    img1 = Image.open('/Edatasoluciones/Detection/MDetection1.jpg').convert('LA')
+    os.system("sudo mkdir /dev/tmp/Uploads")
+    os.system("sudo mkdir /dev/tmp/Detection")
+    os.system("sudo raspistill -n -ex sports -t 500 -w 640 -h 480 -q 10 -th none -o /dev/tmp/Detection/MDetection1.jpg")
+    img1 = Image.open('/dev/tmp/Detection/MDetection1.jpg').convert('LA')
     img2 = img1
     while True:
         # No Difference = 1
@@ -29,7 +31,7 @@ try:
         x = image_entropy(img)
         print(x)
         #img = img.convert('RGB')
-        #img.save("/Edatasoluciones/Detection/Difference.jpg")
+        #img.save("/dev/tmp/Detection/Difference.jpg")
         if x > 5.2:
             try:
                 #Obtener el tiempo en instalaciones con I2C modulo RTC3231 sin internet
@@ -39,19 +41,19 @@ try:
                 time = str(datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
             #print(time)
             print("Start Raspi Image")
-            os.system("sudo raspistill -n -ex sports -t 300 -w 1366 -h 768 -q 10 -th none -o /Edatasoluciones/Detection/MDetection2.jpg")
+            os.system("sudo raspistill -n -ex sports -t 300 -w 1366 -h 768 -q 10 -th none -o /dev/tmp/Detection/MDetection2.jpg")
             print("Start Raspi Video")
-            os.system("sudo raspivid -n -ex sports -w 1366 -h 768 -fps 60 --bitrate 2100000 -t 30000 -o /Edatasoluciones/Uploads/"+time+".h264")
-            shutil.move("/Edatasoluciones/Detection/MDetection2.jpg","/Edatasoluciones/Uploads/"+time+".jpg")
+            os.system("sudo raspivid -n -ex sports -w 1366 -h 768 -fps 60 --bitrate 2100000 -t 30000 -o /dev/tmp/Uploads/"+time+".h264")
+            shutil.move("/dev/tmp/Detection/MDetection2.jpg","/dev/tmp/Uploads/"+time+".jpg")
             #print("Finalizado: "+ str(datetime.now().strftime('%Y/%m/%d %H:%M:%S')))
-            os.system("sudo raspistill -n -ex sports -t 300 -w 640 -h 480 -q 10 -th none -o /Edatasoluciones/Detection/MDetection2.jpg")
-            img2 = Image.open('/Edatasoluciones/Detection/MDetection2.jpg').convert('LA')
+            os.system("sudo raspistill -n -ex sports -t 300 -w 640 -h 480 -q 10 -th none -o /dev/tmp/Detection/MDetection2.jpg")
+            img2 = Image.open('/dev/tmp/Detection/MDetection2.jpg').convert('LA')
             img1 = img2
             #os.system("sudo pkill raspivid")
             #os.system("sudo pkill mmal-vchiq")
         else:
-            os.system("sudo raspistill -n -ex sports -t 300 -w 640 -h 480 -q 10 -th none -o /Edatasoluciones/Detection/MDetection1.jpg")
-            img1 = Image.open('/Edatasoluciones/Detection/MDetection1.jpg').convert('LA')
+            os.system("sudo raspistill -n -ex sports -t 300 -w 640 -h 480 -q 10 -th none -o /dev/tmp/Detection/MDetection1.jpg")
+            img1 = Image.open('/dev/tmp/Detection/MDetection1.jpg').convert('LA')
             #os.system("sudo pkill raspistill")
             #os.system("sudo pkill mmal-vchiq")
 
