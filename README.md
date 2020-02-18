@@ -23,4 +23,4 @@ Instructions:
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key.
 - You will receive the message "Activation Completed". 
-- And youre done and ready to start browsing the movement detection results from your Raspberry Pi on Edatasoluciones website.
+- And you're done and ready to start browsing the movement detection results from your Raspberry Pi on Edatasoluciones website.
