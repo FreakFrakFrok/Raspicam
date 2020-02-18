@@ -15,11 +15,12 @@ Instructions:
     - https://drive.google.com/drive/folders/14nZC6Qvx1dawEartg2oVAVSE1XjW3wtC?usp=sharing
 - Install Raspbian Buster Lite 32GB image on your 32GB Micro SD Card. 
     - If you use Windows then you can use Win32DiskImager for this task: http://sourceforge.net/projects/win32diskimager/files/latest/download
-- After image installation, insert your micro SD card into your raspberry and turn it on. 
+- After image installation, insert your micro SD card into your Raspberry Pi and turn it on. 
 - From console window run the following script: "sudo raspi-config". 
-    - Make sure you have your Wifi or ethernet is configured (Network Options - Wifi)
+    - Make sure you have your Wifi or Ethernet configured (Network Options - Wifi)
     - Make sure you you have your regional date time is configured. (Localisation Options - Change Timezone)
     - Make sure your camera is enabled (Interfacing Options - Camera - Enabled)
 - From a console window run the following script: "sudo python3 /Edatasoluciones/Edata_CamValidation.py"
 - You will be asked to insert your Raspicam Activation Key.
-- You're ready to start browsing the movement detection on Raspicam by Edatasoluciones website.
+- You will receive the message "Activation Completed". 
+- And youre done and ready to start browsing the movement detection results from your Raspberry Pi on Edatasoluciones website.
