@@ -11,7 +11,7 @@ Instructions:
 - Register your account at https://www.edatasoluciones.com/raspicam/registration
 - Obtain your Raspicam Activation Key once you login for the first time at https://www.edatasoluciones.com/raspicam/login
 - Download the 32GB image of Raspbian Buster Lite 32GB with the preconfiguration of the Raspicam python code from one of the following URL:
-    - https://www.edatasoluciones.com/raspicam/media/32GB_Raspicam.img
+    - https://www.edatasoluciones.com/raspicam/media/Raspicam_32GB_BusterLite_Feb2020.img
     - https://drive.google.com/drive/folders/14nZC6Qvx1dawEartg2oVAVSE1XjW3wtC?usp=sharing
 - Install Raspbian Buster Lite 32GB image on your 32GB Micro SD Card. 
     - If you use Windows then you can use Win32DiskImager for this task: http://sourceforge.net/projects/win32diskimager/files/latest/download
