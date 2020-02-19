@@ -3,8 +3,8 @@
 Raspicam code will help you if you own a Raspberry Pi with an integrated camera to record actions based on movement detection. The results of these detections will be visible through the raspicam website. The good news: it's totally free for a camera with 48 hours of historical recording.
 
 Raspbian Buster Lite 32GB OS<br/>What do you need:
-- Raspberry Pi with camera
-- Raspberry Pi with Wifi or Ethernet available
+- Raspberry Pi with Wifi or Ethernet available (Raspberry Pi Zero W, Raspberry Pi 3 or Raspberry Pi 4)
+- Raspberry Pi Camera Module v1 or V2 (https://www.raspberrypi.org/documentation/hardware/camera/)
 - 32GB Micro SD
 
 Instructions:
